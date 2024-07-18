@@ -8,6 +8,7 @@ import * as Elicons from "@element-plus/icons-vue";
 import "element-plus/theme-chalk/el-loading.css";
 import "element-plus/theme-chalk/el-message.css";
 import "element-plus/theme-chalk/src/message-box.scss";
+import "./styles/global.scss";
 const app = createApp(App);
 const pinia = createPinia();
 Object.keys(Elicons).forEach((key) => {

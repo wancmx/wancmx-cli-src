@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@pixi/unsafe-eval": "^7.4.0",
+    "@turf/turf": "^7.0.0",
     "axios": "^1.6.7",
     "element-plus": "^2.5.3",
     "lodash": "^4.17.21",
@@ -18,6 +19,7 @@
     "pdfmake": "^0.2.10",
     "pinia": "^2.1.7",
     "pixi.js": "^7.2.4",
+    "three": "^0.166.1",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5",
     "vue3-eventbus": "^2.0.0"
@@ -25,6 +27,7 @@
   "devDependencies": {
     "@types/node": "^20.11.10",
     "@types/pdfmake": "^0.2.9",
+    "@types/three": "^0.166.0",
     "@vitejs/plugin-vue": "^4.5.2",
     "sass": "^1.70.0",
     "typescript": "^5.2.2",

@@ -7,8 +7,8 @@
     active-text-color="#ffd04b"
     @select="handleSelect"
   >
-    <div class="title">ENSIGHTFUL</div>
-    <el-menu-item index="camera">Camera module</el-menu-item>
+    <div class="title">wancmx</div>
+    <el-menu-item index="camera">module 1</el-menu-item>
     <div class="welcome">
       Hello, {{ userInfo?.username }}
       <div class="logout" @click="logout">Log Out</div>

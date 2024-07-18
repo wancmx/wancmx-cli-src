@@ -1,0 +1,12 @@
+.slide-in {
+  animation: slideInFromBottom 1.2s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
