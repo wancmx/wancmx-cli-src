@@ -16,15 +16,14 @@
 
 1. 通过 wancmx-cli 下载该项目
 
-- npm install wancmx-cli -g
-- wancmx-cli init <projectName>
-- 进入拉取下来的 project
-- npm install
-- npx patch-package
-- npm run dev
+   - npm install wancmx-cli -g
+   - wancmx-cli init yourProjectName
+   - 进入拉取下来的 project
+   - npm install
+   - npx patch-package
+   - npm run dev
 
 2. 通过 git 下载或拉取该项目
-
-- npm install
-- npx patch-package
-- npm run dev
+   - npm install
+   - npx patch-package
+   - npm run dev
