@@ -14,6 +14,7 @@
     "@turf/turf": "^7.0.0",
     "axios": "^1.6.7",
     "element-plus": "^2.5.3",
+    "konva": "^9.3.14",
     "lodash": "^4.17.21",
     "patch-package": "^8.0.0",
     "pdfmake": "^0.2.10",
@@ -21,6 +22,7 @@
     "pixi.js": "^7.2.4",
     "three": "^0.166.1",
     "vue": "^3.3.11",
+    "vue-konva": "^3.0.2",
     "vue-router": "^4.2.5",
     "vue3-eventbus": "^2.0.0"
   },

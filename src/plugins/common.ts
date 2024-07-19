@@ -29,7 +29,7 @@ export const alertMessage = (
  * @returns
  */
 // const WASM_URL = "/src/wasm/pkg/hello_wasm_bg.wasm";
-//   wasmFetch(WASM_URL).then((result: any) => {
+// wasmFetch(WASM_URL).then((result: any) => {
 //     let { loop_test, f_to_c } = result;
 //     let count = loop_test();
 //     let c = f_to_c(100);
@@ -45,21 +45,21 @@ export const wasmFetch = async (url: string, importObject?: any) => {
 
 /**
  * 公共下载方法,定义对应service调用接口时，对应接口需要转为blob，如
- * export function downloadSample() {
- * return request({
- *   url: "/client/downloadSample",
- *   method: "get",
- *   responseType: "arraybuffer", // blob流处理
- *  }).catch((error: any) => {
- *   alertMessage(error.response.data.result || error.message, "error");
- *  });
-}
-
+ export function downloadSample() {
+   return request({
+     url: "/client/downloadSample",
+     method: "get",
+     responseType: "arraybuffer", // blob流处理
+   }).catch((error: any) => {
+     alertMessage(error.response.data.result || error.message, "error");
+   });
+ }
  * @param params 接口入参
  * @param callback 接口函数 回调的方式调用
  * @param downloadFileName 下载的文件名
  * @param fileType 文件类型
  */
+
 export function downloadFile(
   params: any,
   callback: Function,
@@ -626,21 +626,19 @@ export const pointsAndLengthTpPolygon = (
  * @param points 构成几何图形的点位坐标
  * @returns
  */
-export const computedCenterPoint = (points: Array<number>) => {
-  let xCenter = 0;
-  let yCenter = 0;
-  for (let i in points) {
-    let index = Number(i);
+export const computedCenterPoint = (
+  arr: Array<number | string>
+): Array<number> => {
+  let xNum = 0;
+  let yNum = 0;
+  arr.forEach((item: any, index: number) => {
     if (index % 2 === 0) {
-      // x坐标
-      xCenter += points[index];
+      xNum += isNaN(Number(item)) ? Number(item) : 0;
     } else {
-      yCenter += points[index];
+      yNum += isNaN(Number(item)) ? Number(item) : 0;
     }
-  }
-  xCenter = xCenter / (points.length / 2);
-  yCenter = yCenter / (points.length / 2);
-  return [xCenter, yCenter];
+  });
+  return [xNum / (arr.length / 2), yNum / (arr.length / 2)];
 };
 
 /**
