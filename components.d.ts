@@ -33,6 +33,7 @@ declare module 'vue' {
     PointPicCard: typeof import('./src/components/PointPicCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    UploadFile: typeof import('./src/components/UploadFile.vue')['default']
   }
   export interface ComponentCustomProperties {
     vLoading: typeof import('element-plus/es')['ElLoadingDirective']
