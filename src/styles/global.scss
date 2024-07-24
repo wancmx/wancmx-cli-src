@@ -10,3 +10,76 @@
     transform: translateY(0);
   }
 }
+
+/**
+<h1 class="shark-txt">这是一串很长很长的字符串</h1>
+*/
+// 文字扫光特效
+.shark-txt {
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(
+      /*旋转45度*/ 45deg,
+      /*上侧40%为透明色*/ rgba(255, 255, 255, 0) 40%,
+      /*中段为0.7灰色*/ rgba(255, 255, 255, 0.7),
+      /*下侧60%为透明色*/ rgba(255, 255, 255, 0) 60%
+    ) -100%/50% /*-100%代表整个图像被左移100%个自身大小，/50%代表整个图像缩放至50%大小*/
+    no-repeat currentColor /*表示使用当前已有的color*/;
+  background-clip: text;
+  animation: shark-txt 5s infinite;
+}
+@keyframes shark-txt {
+  to {
+    background-position: 200%;
+  }
+}
+
+// card扫光特效
+/*
+<div class="shark-wrap card">
+  <img style="border-radius: 10px" src="../images/card.png" />
+</div>
+*/
+
+/*
+  当出现不规则png图片时，可以在shark-wrap对应的元素上增加使用如下样式
+  其中mask-image属性必须通过http与https的形式去增加图片，否则会报错
+  .mask {
+    mask: url(https://imgservices-1252317822.image.myqcloud.com/coco/s09252023/3af9e8de.00uqxe.png) 0 0/100%;
+  }
+  <div class="shark-wrap mask card">
+    <img style="border-radius: 10px" src="../images/card.png" />
+  </div>
+*/
+
+.card {
+  width: 300px;
+  border-radius: 10px;
+  background-color: #ffe8a3;
+}
+.card img {
+  display: block;
+  width: 100%;
+}
+.shark-wrap {
+  overflow: hidden;
+  position: relative; /*增加position:relative来让after中的position:absolute元素知道基于什么划分范围与hidden*/
+}
+
+.shark-wrap::after {
+  content: "";
+  position: absolute;
+  inset: -20%; /*inset同top、left、right、bottom，设置-20%是为了让他在position为absolute的情况下正确显示位置并且完全覆盖*/
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.7),
+    rgba(255, 255, 255, 0) 60%
+  );
+  animation: shark-wrap 10s infinite;
+  transform: translateX(-100%);
+}
+@keyframes shark-wrap {
+  to {
+    transform: translateX(100%);
+  }
+}
