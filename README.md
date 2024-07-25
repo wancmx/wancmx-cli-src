@@ -17,7 +17,7 @@
 1. 通过 wancmx-cli 下载该项目
 
    - npm install wancmx-cli -g
-   - wancmx-cli init yourProjectName
+   - wancmx-cli init front <yourProjectName>
    - 进入拉取下来的 project
    - npm install
    - npx patch-package
