@@ -1,4 +1,4 @@
-import { Ref, ref } from "vue";
+import { onMounted, Ref, ref } from "vue";
 import * as PIXI from "pixi.js";
 
 /**
@@ -322,6 +322,34 @@ export default (pixi: Ref) => {
     // app.value.stage.addChild(message);
     return message;
   };
+
+  /**
+   * 窗口放大缩小调整pixi画布大小
+   * @param mainDom pixi画布所在的父元素
+   */
+  const resizeWindow = (mainDom: HTMLElement) => {
+    const RIGHT_GAP: number = 170;
+    const TOP_GAP: number = 50;
+    /**
+     * 监听页面窗口大小
+     * @param entries
+     */
+    const handleResize = (entries: any) => {
+      for (let entry of entries) {
+        const { right, bottom, x, y } = entry.contentRect;
+        let newWidth = right + x - RIGHT_GAP;
+        let newHeight = bottom + y - TOP_GAP;
+        if (newHeight < 800) {
+          newHeight = 800;
+        }
+        app.value.renderer.resize(newWidth, newHeight);
+      }
+    };
+    onMounted(() => {
+      const observer = new ResizeObserver(handleResize);
+      observer.observe(mainDom);
+    });
+  };
   return {
     app,
     createPixiApp,
@@ -334,5 +362,6 @@ export default (pixi: Ref) => {
     textContainer,
     getNewStaticGraphics,
     // getHitArea,
+    resizeWindow,
   };
 };

@@ -61,6 +61,7 @@ export default () => {
     }
     scollFunction = () => {};
   };
+
   return {
     httpController,
     scollFunction,
