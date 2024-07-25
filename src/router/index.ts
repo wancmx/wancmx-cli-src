@@ -1,6 +1,6 @@
 import { piniaPageInfo } from "@/store/pageInfo";
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-
+type RouteRecordRaw = typeof RouteRecordRaw;
 const notFoundPage = {
   path: "/:catchAll(.*)",
   name: "404",
